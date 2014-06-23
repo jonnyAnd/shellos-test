@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo "HOUR????"
 
 
@@ -22,7 +24,7 @@ allActionsComplete(){
 }
 
 returnToMain(){
-	sh ./shellos.sh;
+	sh ./coreScript.sh;
 }
 
 

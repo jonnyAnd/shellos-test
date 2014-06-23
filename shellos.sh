@@ -1,77 +1,40 @@
+#!/bin/bash
 
+## todo :
+## add string to connect to internet from stored pass
 
 startShellOs(){
-	ticker
-}
 
-ticker(){
-	while sleep 1; do onTick; done
-}
+	##check for net connection
+	if getIsConnectedToInternet; then 
+		echo "Good to continue to app!"; 
+		updateApp
+	
+		## continue to app
+		sh ./coreScript.sh
 
-onTick(){
-
-	if [ "$(getHours)" = "00" ] && [ "$(getMinutes)" = "00" ] && [ "$(getSeconds)" = "00" ];
-	then
-		## ITS MIDNIGHT
-		onDay
-
-	elif [ "$(getMinutes)" = "00" ] && [ "$(getSeconds)" = "00" ];
-	then
-		## On the hour
-		onHour
-	elif [ "$(getSeconds)" = "00" ]
-	then
-		## on the minute!
-		onMinute	
-	else
-		onSecond
+	else 
+		echo "nopes"; 
+		sh ./smartReconnect.sh
+		##here we can offer the smart reconnect
 	fi
 }
 
-onDay(){
-	clear
-	sh ./onDay.sh
-	exit;
-}
-
-onHour(){
-	clear
-	sh ./onHour.sh
-	exit;
-}
-
-onMinute(){
-	clear;
-	sh ./onMinute.sh
-	exit;
-}
-
-onSecond(){
-	clear;
-	figOut $(getDateString);
+getIsConnectedToInternet(){
+	if [[ $(ping -c1 google.com) ]]
+	then 
+	    echo "You are connected to the intertubes!"
+	    return 0;
+	else
+	    echo "No interwebs!!"
+	    return 1;
+	fi
 }
 
 
-## UTILS
-figOut(){
-	figlet ${@}
-}
-
-##returning functions
-getDateString(){
-	echo $(date +"%H : %M : %S")
-}
-
-getSeconds(){
-	echo $(date +"%S")
-}
-
-getMinutes(){
-	echo $(date +"%M")
-}
-
-getHours(){
-	echo $(date +"%H")
+updateApp(){
+	echo "Updateing from github"
+	git pull;
 }
 
 

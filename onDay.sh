@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo "DAY"
 
 
@@ -17,16 +19,14 @@ allActionsComplete(){
 
 	## Clean up
 
-	## Stat the whole lot again!
-	returnToMain
+
+	## restart app (and hopfully cause and update!)
+	restartApp
 }
 
-returnToMain(){
+restartApp(){
 	sh ./shellos.sh;
 }
-
-
-
 
 startActions;
 
