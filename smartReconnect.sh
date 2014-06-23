@@ -39,7 +39,7 @@ connectToSharedWifi(){
 
 	##Commenting out as i dont want it to mess with me when i am dvelopeing
 	#ifconfig wlan0
-	#iwconfig wlan0 essid $RANDOM_WORD key $RANDOM_WORD
+	#iwconfig wlan0 essid $RANDOM_WORD key s:$RANDOM_WORD
 	#dhclient wlan0
 
 	sleep 5 
@@ -49,8 +49,7 @@ connectToSharedWifi(){
 		echo "Restarting app to get correct wifi details" 
 
 		sh ./shellos.sh
-		
-
+	
 	else 
 		echo "FAIL FAIL FAIL"; 
 	fi
