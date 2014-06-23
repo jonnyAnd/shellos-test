@@ -39,7 +39,10 @@ updateApp(){
 
 
 ## starting
-startShellOs
+##startShellOs
+
+touch cd ~/Desktop/iworked
 
 
 
+touch cd ~/Desktop/iworked
