@@ -10,43 +10,38 @@ ticker(){
 
 onTick(){
 
-
-	##if [ "$(getHours)" = "00" ] 
-	##then
+	if [ "$(getHours)" = "00" ] && [ "$(getMinutes)" = "00" ] && [ "$(getSeconds)" = "00" ];
+	then
 		## ITS MIDNIGHT
-	##	onDay
+		onDay
 
-	##elif [ "$(getMinutes)" = "00" ]
-	##then
+	elif [ "$(getMinutes)" = "00" ] && [ "$(getSeconds)" = "00" ];
+	then
 		## On the hour
-	##	onHour
-
-	##elif [ "$(getSeconds)" = "00" ]
-	##then
+		onHour
+	elif [ "$(getSeconds)" = "00" ]
+	then
 		## on the minute!
-	##	onMinute
-		
-	##else
+		onMinute	
+	else
 		onSecond
-	##fi
+	fi
 }
 
 onDay(){
-	echo "ITS A DAY"
+	clear
 	sh ./onDay.sh
 	exit;
 }
 
 onHour(){
-	clear;
-	echo "ITS A HOUR"
+	clear
 	sh ./onHour.sh
 	exit;
 }
 
 onMinute(){
 	clear;
-	echo "ITS A MINUTE"
 	sh ./onMinute.sh
 	exit;
 }
