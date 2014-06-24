@@ -6,18 +6,18 @@
 startShellOs(){
 
 	##check for net connection
-	if getIsConnectedToInternet; then 
-		echo "Good to continue to app!"; 
+##	if getIsConnectedToInternet; then 
+##		echo "Good to continue to app!"; 
 		updateApp
 	
 		## continue to app
 		sh ./coreScript.sh
 
-	else 
-		echo "nopes"; 
-		sh ./smartReconnect.sh
-		##here we can offer the smart reconnect
-	fi
+##	else 
+##		echo "nopes"; 
+##		sh ./smartReconnect.sh
+##		##here we can offer the smart reconnect
+##	fi
 }
 
 getIsConnectedToInternet(){
@@ -39,10 +39,6 @@ updateApp(){
 
 
 ## starting
-##startShellOs
-
-touch cd ~/Desktop/iworked
+startShellOs
 
 
-
-touch cd ~/Desktop/iworked
