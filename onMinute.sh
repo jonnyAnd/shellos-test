@@ -9,7 +9,7 @@ startActions(){
 
 doActions(){
 	## Put actions here
-	playMedia "http://31.media.tumblr.com/tumblr_kpd8q993Cd1qa26qlo1_500.gif"
+	playMedia "http://i.imgur.com/9LQd62Q.gif"
 
 	## when done go home
 	allActionsComplete
