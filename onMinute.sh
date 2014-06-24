@@ -11,6 +11,7 @@ doActions(){
 	## Put actions here
 
 	playMedia "http://media2.giphy.com/media/XNzYBOhw7C3mw/giphy.gif"
+	wait 5
 	playMedia "http://media.giphy.com/media/x5aebCMe2PUCA/giphy.gif"
 	
 
