@@ -9,7 +9,7 @@ startActions(){
 
 doActions(){
 	## Put actions here
-	playMedia "http://i.imgur.com/3wGzMD1.gif"
+
 	playMedia "http://media2.giphy.com/media/XNzYBOhw7C3mw/giphy.gif"
 	playMedia "http://media.giphy.com/media/x5aebCMe2PUCA/giphy.gif"
 	
