@@ -2,27 +2,18 @@
 
 echo "HOUR????"
 
-## - IMPORTS - ##
-. ./core/utils/*.sh
-
-
-
-
-
-##-------------##
-
 
 startActions(){
     doActions
 }
 
-doActions(){
-	## Put actions here
+##doActions(){
+
+	## this should be in the instance file
 
 
-	## when done go home
-	allActionsComplete
-}
+
+##}
 
 allActionsComplete(){
 
@@ -31,10 +22,6 @@ allActionsComplete(){
 	## Stat the whole lot again!
 	returnToMain
 }
-
-
-
-
 
 startActions;
 
