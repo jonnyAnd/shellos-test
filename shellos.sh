@@ -36,6 +36,7 @@ updateApp(){
 	echo "Updateing from github"
 	git pull;
 	git checkout develop
+	git pull;
 }
 
 
