@@ -16,7 +16,7 @@ startShellOs(){
 
 	##check for net connection
 	##if getIsConnectedToInternet; then 
-		##updateApp
+		updateApp
 	##else 
 		##sh ./smartReconnect.sh
 	##fi
