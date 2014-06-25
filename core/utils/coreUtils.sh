@@ -57,7 +57,7 @@ playMedia(){
 
 	##Play
 	##mplayer -loop 3 ./precache/$FILE_NAME -fs 
-	mplayer ./precache/$FILE_NAME -fs 
+	mplayer ./precache/$FILE_NAME -fs -quiet 
 }
 
 isPreCached(){
