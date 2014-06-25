@@ -1,3 +1,16 @@
+#!/bin/bash
+
+
+
+
+## - IMPORTS - ##
+. ./settings/*.sh
+
+
+
+##-------------##
+
+
 returnToMain(){
 	sh ./core/coreScript.sh;
 }
@@ -21,6 +34,15 @@ updateApp(){
 	echo "Updateing from github"
 	git pull;
 	git checkout develop
+}
+
+updateInstanceFiles(){
+	
+	rm -rf ./$INSTANCE_FOLDER_NAME
+	git clone $INSTACE_REPO ./$INSTANCE_FOLDER_NAME
+	cd $INSTANCE_FOLDER_NAME
+	git checkout $INSTANCE_BRANCH
+	cd ..
 }
 
 figOut(){
@@ -57,14 +79,14 @@ playMedia(){
 
 	##Play
 	##mplayer -loop 3 ./precache/$FILE_NAME -fs 
-	mplayer ./precache/$FILE_NAME -fs -quiet 
+	mplayer ./precache/$FILE_NAME -fs 
 }
 
 isPreCached(){
 
 	PRE_CACHE_FILE="./precache/"$1
 
-	if [ -f "$PRE_CACHE_FILE" ]; then
+	if [ -a "$PRE_CACHE_FILE" ]; then
 	    echo "File already on system"
 	    return 0;
 	else
