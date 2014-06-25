@@ -1,6 +1,12 @@
 #!/bin/bash
 
 echo "HOUR????"
+## - IMPORTS - ##
+##. ./core/utils/*.sh
+. ./core/utils/*.sh
+. ./instance/onHour.sh
+
+##-------------##
 
 
 startActions(){
