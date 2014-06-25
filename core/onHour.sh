@@ -1,6 +1,15 @@
 #!/bin/bash
 
-echo "DAY"
+echo "HOUR????"
+
+## - IMPORTS - ##
+. ./core/utils/*.sh
+
+
+
+
+
+##-------------##
 
 
 startActions(){
@@ -9,8 +18,7 @@ startActions(){
 
 doActions(){
 	## Put actions here
-	##clean up afer the day
-	rm -rf ./precache
+
 
 	## when done go home
 	allActionsComplete
@@ -20,14 +28,13 @@ allActionsComplete(){
 
 	## Clean up
 
-
-	## restart app (and hopfully cause a update!)
-	restartApp
+	## Stat the whole lot again!
+	returnToMain
 }
 
-restartApp(){
-	sh ./shellos.sh;
-}
+
+
+
 
 startActions;
 

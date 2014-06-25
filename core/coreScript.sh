@@ -1,5 +1,15 @@
 #!/bin/bash
 
+## - IMPORTS - ##
+. ./core/utils/*.sh
+
+
+
+
+
+##-------------##
+
+
 startCore(){
 	ticker
 }
@@ -30,19 +40,19 @@ onTick(){
 
 onDay(){
 	clear
-	sh ./onDay.sh
+	sh ./core/onDay.sh
 	exit;
 }
 
 onHour(){
 	clear
-	sh ./onHour.sh
+	sh ./core/onHour.sh
 	exit;
 }
 
 onMinute(){
 	clear;
-	sh ./onMinute.sh
+	sh ./core/onMinute.sh
 	exit;
 }
 
@@ -50,30 +60,6 @@ onSecond(){
 	clear;
 	figOut $(getDateString);
 }
-
-
-## UTILS
-figOut(){
-	figlet ${@}
-}
-
-##returning functions
-getDateString(){
-	echo $(date +"%H : %M : %S")
-}
-
-getSeconds(){
-	echo $(date +"%S")
-}
-
-getMinutes(){
-	echo $(date +"%M")
-}
-
-getHours(){
-	echo $(date +"%H")
-}
-
 
 ## starting
 startCore

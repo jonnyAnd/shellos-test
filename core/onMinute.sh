@@ -1,6 +1,16 @@
 #!/bin/bash
 
-echo "HOUR????"
+## - IMPORTS - ##
+. ./core/utils/*.sh
+
+
+
+
+
+##-------------##
+
+
+echo "MINUTE"
 
 
 startActions(){
@@ -10,6 +20,10 @@ startActions(){
 doActions(){
 	## Put actions here
 
+	playMedia "http://media2.giphy.com/media/XNzYBOhw7C3mw/giphy.gif"
+	##wait 5
+	playMedia "http://media.giphy.com/media/x5aebCMe2PUCA/giphy.gif"
+	
 
 	## when done go home
 	allActionsComplete
@@ -22,13 +36,6 @@ allActionsComplete(){
 	## Stat the whole lot again!
 	returnToMain
 }
-
-returnToMain(){
-	sh ./coreScript.sh;
-}
-
-
-
 
 startActions;
 

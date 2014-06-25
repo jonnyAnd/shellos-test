@@ -1,38 +1,46 @@
-#!/bin/bash
-
-echo "MINUTE"
-
-
-startActions(){
-    doActions
-}
-
-doActions(){
-	## Put actions here
-
-	playMedia "http://media2.giphy.com/media/XNzYBOhw7C3mw/giphy.gif"
-	wait 5
-	playMedia "http://media.giphy.com/media/x5aebCMe2PUCA/giphy.gif"
-	
-
-	## when done go home
-	allActionsComplete
-}
-
-allActionsComplete(){
-
-	## Clean up
-
-	## Stat the whole lot again!
-	returnToMain
-}
-
 returnToMain(){
-	sh ./coreScript.sh;
+	sh ./core/coreScript.sh;
 }
 
+restartApp(){
+	sh ./shellos.sh;
+}
 
-####UTILS
+getIsConnectedToInternet(){
+	if [[ $(ping -c1 google.com) ]]
+	then 
+	    echo "You are connected to the intertubes!"
+	    return 0;
+	else
+	    echo "No interwebs!!"
+	    return 1;
+	fi
+}
+
+updateApp(){
+	echo "Updateing from github"
+	git pull;
+}
+
+figOut(){
+	figlet ${@}
+}
+
+getDateString(){
+	echo $(date +"%H : %M : %S")
+}
+
+getSeconds(){
+	echo $(date +"%S")
+}
+
+getMinutes(){
+	echo $(date +"%M")
+}
+
+getHours(){
+	echo $(date +"%H")
+}
 
 playMedia(){
 
@@ -73,12 +81,3 @@ preCacheFile(){
 
 	wget -O ./precache/$1 $2;
 }
-
-
-
-######
-
-startActions;
-
-
-
