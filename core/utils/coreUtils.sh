@@ -70,16 +70,24 @@ playMedia(){
 	##precache
 	FULL_URL=$1
 	FILE_NAME=${FULL_URL##*/}
+	DO_PRECACHE=$2
 
-	if isPreCached $FILE_NAME; then 
-		echo "precashed"
+	if $DO_PRECACHE; then
+		if isPreCached $FILE_NAME; then 
+			echo "precashed"
+		else
+			preCacheFile $FILE_NAME $FULL_URL
+		fi
+		
+		sendToMplayer ./precache/$FILE_NAME
+		
 	else
-		preCacheFile $FILE_NAME $FULL_URL
+		sendToMplayer $FULL_URL
 	fi
+}
 
-	##Play
-	##mplayer -loop 3 ./precache/$FILE_NAME -fs 
-	mplayer ./precache/$FILE_NAME -fs 
+sendToMplayer(){
+	mplayer $1 -fs
 }
 
 isPreCached(){
