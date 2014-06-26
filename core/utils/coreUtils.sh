@@ -86,7 +86,7 @@ isPreCached(){
 
 	PRE_CACHE_FILE="./precache/"$1
 
-	if [ -a "$PRE_CACHE_FILE" ]; then
+	if [ -f "$PRE_CACHE_FILE" ]; then
 	    echo "File already on system"
 	    return 0;
 	else
