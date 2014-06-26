@@ -16,12 +16,13 @@
 startShellOs(){
 
 	##check for net connection
-	##if getIsConnectedToInternet; then 
-		##updateApp
+	if getIsConnectedToInternet; then 
+		updateApp
 		updateInstanceFiles
-	##else 
+	else 
 		##sh ./smartReconnect.sh
-	##fi
+		echo "Internet connection issue"
+	fi
 
 	## continue to app
 	sh ./core/coreScript.sh
