@@ -13,11 +13,13 @@ startShellOs(){
 	
 	clear
 	echo "Waiting for system to come up"
-	sleep 10;
+	##sleep 10;
 
 
 	##check for net connection
 	if getIsConnectedToInternet; then 
+		echo "system ready to go!"
+	
 		updateApp
 		updateInstanceFiles
 		## continue to app
