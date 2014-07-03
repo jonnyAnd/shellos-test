@@ -103,7 +103,7 @@ playMedia(){
 
 sendToMplayer(){
 
-	mplayer $1 -fs
+	mplayer $1 -fs -zoom
 }
 
 isPreCached(){
