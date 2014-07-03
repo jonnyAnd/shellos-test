@@ -17,21 +17,21 @@ startShellOs(){
 
 
 	##check for net connection
-	if getIsConnectedToInternet; then 
+	##if getIsConnectedToInternet; then 
 		echo "system ready to go!"
 	
 		updateApp
 		updateInstanceFiles
 		## continue to app
 		sh ./core/coreScript.sh
-	else 
+	##else 
 		##sh ./smartReconnect.sh
-		echo "Internet connection issue"
+		##echo "Internet connection issue"
 		
-		((RECONNECT_COUNT+=1))
-		echo "Trying again! Attempt "RECONNECT_COUNT
-		startShellOs
-	fi
+		##((RECONNECT_COUNT+=1))
+		##echo "Trying again! Attempt "RECONNECT_COUNT
+		##startShellOs
+	##fi
 	
 }
 
