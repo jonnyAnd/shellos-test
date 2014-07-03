@@ -69,18 +69,16 @@ playGif(){
 }
 
 playYouTube(){
+	VIDEO_CODE=$1
 
-	##Removed for testing
-	##VIDEO_CODE=$1
-	##if isPreCached $VIDEO_CODE; then 
-	##	echo "precashed"
-	##else
-	##	preCacheYouTube $VIDEO_CODE
-	##fi
+	if isPreCached $VIDEO_CODE; then 
+		echo "precashed"
+	else
+		echo "not precached"
 
-	youtube-dl -o $1 "http://www.youtube.com/watch?v="$1
+		preCacheYouTube $VIDEO_CODE
+	fi
 	sendToMplayer ./precache/$1
-
 }
 
 playMedia(){
@@ -133,11 +131,14 @@ preCacheFile(){
 }
 
 preCacheYouTube(){
+	echo "preCacheYouTube-->http://www.youtube.com/watch?v="$1
+
+
 	## do we have a precachefolder
 	if [ ! -d "./precache" ]; then
 		mkdir precache;   
 	fi
 
 	echo "PreCaching YouTube "$1
-	youtube-dl -o $1 "http://www.youtube.com/watch?v="$1
+	youtube-dl -o ./precache/$1 "http://www.youtube.com/watch?v="$1
 }
