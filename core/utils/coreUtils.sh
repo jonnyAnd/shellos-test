@@ -141,5 +141,5 @@ preCacheYouTube(){
 
 	echo "PreCaching YouTube "$1
 	##youtube-dl -f worst -o ./precache/$1 "http://www.youtube.com/watch?v="$1
-	youtube-dl -f 5 -o ./precache/$1 "http://www.youtube.com/watch?v="$1
+	youtube-dl -f 17 -o ./precache/$1 "http://www.youtube.com/watch?v="$1
 }
