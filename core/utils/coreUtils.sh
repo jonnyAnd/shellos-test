@@ -70,13 +70,15 @@ playGif(){
 
 playYouTube(){
 
-	VIDEO_CODE=$1
-	if isPreCached $VIDEO_CODE; then 
-		echo "precashed"
-	else
-		preCacheYouTube $VIDEO_CODE
-	fi
+	##Removed for testing
+	##VIDEO_CODE=$1
+	##if isPreCached $VIDEO_CODE; then 
+	##	echo "precashed"
+	##else
+	##	preCacheYouTube $VIDEO_CODE
+	##fi
 
+	youtube-dl -o $1 "http://www.youtube.com/watch?v="$1
 	sendToMplayer ./precache/$1
 
 }
@@ -102,6 +104,7 @@ playMedia(){
 }
 
 sendToMplayer(){
+
 	mplayer $1 -fs
 }
 
