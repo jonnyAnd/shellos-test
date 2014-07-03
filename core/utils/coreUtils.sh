@@ -36,8 +36,7 @@ updateApp(){
 	git checkout develop
 }
 
-updateInstanceFiles(){
-	
+updateInstanceFiles(){	
 	rm -rf ./$INSTANCE_FOLDER_NAME
 	git clone $INSTACE_REPO ./$INSTANCE_FOLDER_NAME
 	cd $INSTANCE_FOLDER_NAME
@@ -65,14 +64,33 @@ getHours(){
 	echo $(date +"%H")
 }
 
+playGif(){
+	playMedia $1 $2
+}
+
+playYouTube(){
+
+	VIDEO_CODE=$1
+	if isPreCached $VIDEO_CODE; then 
+		echo "precashed"
+	else
+		preCacheYouTube $VIDEO_CODE
+	fi
+
+	sendToMplayer ./precache/$1
+
+}
+
 playMedia(){
 
 	##precache
 	FULL_URL=$1
 	FILE_NAME=${FULL_URL##*/}
-	DO_PRECACHE=$2
+	NO_PRECACHE=$2
 
-	if $DO_PRECACHE; then
+	if $NO_PRECACHE; then
+		sendToMplayer $FULL_URL
+	else
 		if isPreCached $FILE_NAME; then 
 			echo "precashed"
 		else
@@ -80,9 +98,6 @@ playMedia(){
 		fi
 		
 		sendToMplayer ./precache/$FILE_NAME
-		
-	else
-		sendToMplayer $FULL_URL
 	fi
 }
 
@@ -112,4 +127,14 @@ preCacheFile(){
 	echo "PreCaching "$1" from "$2
 
 	wget -O ./precache/$1 $2;
+}
+
+preCacheYouTube(){
+	## do we have a precachefolder
+	if [ ! -d "./precache" ]; then
+		mkdir precache;   
+	fi
+
+	echo "PreCaching YouTube "$1
+	youtube-dl -o $1 "http://www.youtube.com/watch?v="$1
 }
