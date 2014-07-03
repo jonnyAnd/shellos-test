@@ -132,16 +132,14 @@ preCacheFile(){
 
 preCacheYouTube(){
 	echo "preCacheYouTube-->http://www.youtube.com/watch?v="$1
-
-
 	## do we have a precachefolder
 	if [ ! -d "./precache" ]; then
 		mkdir precache;   
 	fi
 
+	
+
 	echo "PreCaching YouTube "$1
-
-
-
-	youtube-dl -f worst -o ./precache/$1 "http://www.youtube.com/watch?v="$1
+	##youtube-dl -f worst -o ./precache/$1 "http://www.youtube.com/watch?v="$1
+	youtube-dl -f 5 -o ./precache/$1 "http://www.youtube.com/watch?v="$1
 }
