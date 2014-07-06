@@ -3,11 +3,12 @@
 
 
 testme(){
+
 	
-	playYouTube $1
-	##youtube-dl -o $1 "http://www.youtube.com/watch?v="$1
+	rtmpdump -v -r rtmp://cp103653.live.edgefcs.net/live/international_medium@36382 | mplayer -
 	
-	##mplayer $1
 }
 
-testme "moZ4qoFIeUE"
+
+testme 
+
