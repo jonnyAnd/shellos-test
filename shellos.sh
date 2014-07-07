@@ -5,6 +5,7 @@
 	## - add images play for duration
 	## - add stream play for duration
 	## - refactor to have instance implemented cleaner
+	## - setup and install depemndnceies	
 
 
 
