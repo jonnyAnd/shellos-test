@@ -1,6 +1,13 @@
 #!/bin/bash
 
 ##TODO:
+	## - Wait for internet connection to mone up before update
+	## - add images play for duration
+	## - add stream play for duration
+	## - refactor to have instance implemented cleaner
+
+
+
 
 
 ## - IMPORTS - ##
