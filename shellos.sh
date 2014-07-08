@@ -33,16 +33,19 @@ startShellOs(){
 		## continue to app
 		sh ./core/coreScript.sh
 	else 
+		sh ./core/coreScript.sh
 
-		if [ "$RECONNECT_COUNT" = "$ATTEMPT_TRIES" ]; then
-			echo "NO INTERNET CONNECTION - proceed without update"
-			sh ./core/coreScript.sh
-		
-		else
-			((RECONNECT_COUNT+=1))
-			echo "Trying again! Attempt "RECONNECT_COUNT
-			startShellOs
-		fi
+
+
+##		if [ "$RECONNECT_COUNT" = "$ATTEMPT_TRIES" ]; then
+##			echo "NO INTERNET CONNECTION - proceed without update"
+##			sh ./core/coreScript.sh
+##		
+##		else
+##			((RECONNECT_COUNT+=1))
+##			echo "Trying again! Attempt "RECONNECT_COUNT
+##			startShellOs
+##		fi
 
 	fi
 	
