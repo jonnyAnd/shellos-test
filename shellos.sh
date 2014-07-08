@@ -25,27 +25,31 @@ startShellOs(){
 
 
 	##check for net connection
-	##if getIsConnectedToInternet; then 
+	if getIsConnectedToInternet; then 
 		echo "system ready to go!"
 	
 		updateApp
 		updateInstanceFiles
 		## continue to app
 		sh ./core/coreScript.sh
-	##else 
-		##sh ./smartReconnect.sh
-		##echo "Internet connection issue"
+	else 
+
+		if [ "$RECONNECT_COUNT" = "$ATTEMPT_TRIES" ]; then
+			echo "NO INTERNET CONNECTION - proceed without update"
+			sh ./core/coreScript.sh
 		
-		##((RECONNECT_COUNT+=1))
-		##echo "Trying again! Attempt "RECONNECT_COUNT
-		##startShellOs
-	##fi
+		else
+			((RECONNECT_COUNT+=1))
+			echo "Trying again! Attempt "RECONNECT_COUNT
+			startShellOs
+		fi
+
+	fi
 	
 }
 
 ## starting
 RECONNECT_COUNT=0;
+ATTEMPT_TRIES=10;
 
 startShellOs
-
-
