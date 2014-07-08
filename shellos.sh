@@ -25,15 +25,15 @@ startShellOs(){
 
 
 	##check for net connection
-	if getIsConnectedToInternet; then 
+	##if getIsConnectedToInternet; then 
 		echo "system ready to go!"
 	
 		updateApp
 		updateInstanceFiles
 		## continue to app
 		sh ./core/coreScript.sh
-	else 
-		sh ./core/coreScript.sh
+	##else 
+		##sh ./core/coreScript.sh
 
 
 
@@ -47,7 +47,7 @@ startShellOs(){
 ##			startShellOs
 ##		fi
 
-	fi
+	##fi
 	
 }
 
