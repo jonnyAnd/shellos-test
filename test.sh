@@ -1,12 +1,18 @@
 . ./core/utils/*.sh
-. ./instance/onMinute.sh
+. ./core/utils/youtubeUtil.sh
+. ./core/utils/dictionaryUtil.sh
 
 
 testme(){
 
+
+
+##	youtubeUtil_youtubeVideoSearchResultsToFile "hello" 
 	
-	rtmpdump -v -r rtmp://cp103653.live.edgefcs.net/live/international_medium@36382 | mplayer -
-	
+	TEST=$(dictionaryUtil_getRandomWordFromFile "./precache/youtubeSearchList.txt")
+
+	echo "--"
+	echo $TEST
 }
 
 
