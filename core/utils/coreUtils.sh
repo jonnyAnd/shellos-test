@@ -143,3 +143,68 @@ preCacheYouTube(){
 	##youtube-dl -f worst -o ./precache/$1 "http://www.youtube.com/watch?v="$1
 	youtube-dl -f 17 -o ./precache/$1 "http://www.youtube.com/watch?v="$1
 }
+
+
+
+dictionaryUtil_getRandomWordFromFile(){
+
+	SOURCE_FILE=$1
+
+
+	##head -$((${RANDOM} % `wc -l < $SOURCE_FILE` + 1)) $SOURCE_FILE | tail -1
+
+	echo $(head -n 1 $SOURCE_FILE)
+
+	
+
+	##echo $RANDOM
+
+
+}
+
+###### you tube stuff
+youtubeUtil_youtubeVideoSearchResultsToFile(){
+	SEARCH_TERM=$1
+	FILE_PATH="./precache/youtubeSearchList.txt"
+
+	##clear old output
+	rm $FILE_PATH
+
+	YOUTUBE_SEARCH_RESULT=$(youtubeUtil_returnRawYoutubeSearch $SEARCH_TERM)
+
+	IFS=\"
+	set -- $YOUTUBE_SEARCH_RESULT
+	for i; do youtubeUtil_filterForValidResultsAndOutPut $i ; done
+}
+
+youtubeUtil_filterForValidResultsAndOutPut(){
+
+	##echo $UNFILTERED_LINE	
+
+	UNFILTERED_LINE=$1
+
+
+	MATCH_STRING="watch?v="
+
+	REMOVE_PREFIX="href=\"\/watch?v=";
+	REMOVE_SUFFIX="\"";
+
+
+	if [[ $UNFILTERED_LINE == *$MATCH_STRING* ]]
+	then
+		if [[ ${#UNFILTERED_LINE} == 20 ]]
+		then
+		##	echo $UNFILTERED_LINE
+
+			##echo $UNFILTERED_LINE | sed -r 's/^.{5}//' >> "./precache/youtubeSearchList.txt"
+			echo ${UNFILTERED_LINE:9} >> "./precache/youtubeSearchList.txt"
+
+		fi
+	fi
+}
+
+youtubeUtil_returnRawYoutubeSearch(){
+	##echo "Searching youtube for "$1
+	RESULT="`wget -qO- http://www.youtube.com/results?search_query=$1`"
+	echo $RESULT
+}
