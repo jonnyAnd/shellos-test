@@ -12,11 +12,11 @@
 
 
 returnToMain(){
-	sh ./core/coreScript.sh;
+	bash ./core/coreScript.sh;
 }
 
 restartApp(){
-	sh ./shellos.sh;
+	bash ./shellos.sh;
 }
 
 getIsConnectedToInternet(){
