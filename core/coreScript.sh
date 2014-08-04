@@ -7,7 +7,6 @@
 
 
 startCore(){
-	onLoad
 	ticker
 }
 
