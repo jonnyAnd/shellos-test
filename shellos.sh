@@ -11,7 +11,7 @@ startShellOs(){
 		updateApp
 	
 		## continue to app
-	##	sh ./coreScript.sh
+		bash ./coreScript.sh
 
 ##	else 
 ##		echo "nopes"; 
