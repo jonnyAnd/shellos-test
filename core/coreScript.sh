@@ -40,20 +40,20 @@ onTick(){
 
 onDay(){
 	clear
-	sh ./core/onDayCore.sh
+	bash ./core/onDayCore.sh
 
 	exit;
 }
 
 onHour(){
 	clear
-	sh ./core/onHourCore.sh
+	bash ./core/onHourCore.sh
 	exit;
 }
 
 onMinute(){
 	clear;
-	sh ./core/onMinuteCore.sh
+	bash ./core/onMinuteCore.sh
 	exit;
 }
 
