@@ -7,6 +7,7 @@
 
 
 startCore(){
+	onLoad
 	ticker
 }
 
@@ -32,6 +33,13 @@ onTick(){
 	else
 		onSecond
 	fi
+}
+
+onLoad(){
+	clear
+	./core/onLoad.sh
+
+	exit;	
 }
 
 onDay(){
