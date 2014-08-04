@@ -37,7 +37,7 @@ onTick(){
 
 onLoad(){
 	clear
-	./core/onLoad.sh
+	./core/onLoadCore.sh
 
 	exit;	
 }
