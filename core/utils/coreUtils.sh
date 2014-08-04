@@ -1,8 +1,6 @@
 #!/bin/bash
 
 
-
-
 ## - IMPORTS - ##
 . ./settings/*.sh
 
