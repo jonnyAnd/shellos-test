@@ -30,19 +30,19 @@ onTick(){
 
 onDay(){
 	clear
-	sh ./onDay.sh
+	bash ./onDay.sh
 	exit;
 }
 
 onHour(){
 	clear
-	sh ./onHour.sh
+	bash ./onHour.sh
 	exit;
 }
 
 onMinute(){
 	clear;
-	sh ./onMinute.sh
+	bash ./onMinute.sh
 	exit;
 }
 
