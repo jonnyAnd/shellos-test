@@ -2,14 +2,12 @@
 
 ## - IMPORTS - ##
 . ./core/utils/*.sh
+. ./settings/*.sh
 
 . ./instance/onMinute.sh
-
 ##-------------##
 
-
 echo "MINUTE"
-
 
 startActions(){
     doActions

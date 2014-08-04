@@ -2,11 +2,13 @@
 
 echo "DAY"
 ## - IMPORTS - ##
-##. ./core/utils/*.sh
 . ./core/utils/*.sh
-. ./instance/onDay.sh
+. ./settings/*.sh
 
+. ./instance/onDay.sh
 ##-------------##
+
+
 
 startActions(){
     doActions

@@ -2,11 +2,7 @@
 
 ## - IMPORTS - ##
 . ./core/utils/*.sh
-
-
-
-
-
+. ./settings/*.sh
 ##-------------##
 
 
@@ -40,20 +36,20 @@ onTick(){
 
 onDay(){
 	clear
-	bash ./core/onDayCore.sh
+	./core/onDayCore.sh
 
 	exit;
 }
 
 onHour(){
 	clear
-	bash ./core/onHourCore.sh
+	./core/onHourCore.sh
 	exit;
 }
 
 onMinute(){
 	clear;
-	bash ./core/onMinuteCore.sh
+	./core/onMinuteCore.sh
 	exit;
 }
 

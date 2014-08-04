@@ -1,20 +1,15 @@
 #!/bin/bash
 
-
 ## - IMPORTS - ##
 . ./settings/*.sh
-
-
-
 ##-------------##
 
-
 returnToMain(){
-	bash ./core/coreScript.sh;
+	./core/coreScript.sh;
 }
 
 restartApp(){
-	bash ./shellos.sh;
+	./shellos.sh;
 }
 
 getIsConnectedToInternet(){
