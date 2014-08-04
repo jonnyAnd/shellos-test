@@ -2,8 +2,7 @@
 
 ## - IMPORTS - ##
 . ./core/utils/*.sh
-. ./core/utils/youtubeUtil.sh
-. ./core/utils/dictionaryUtil.sh
+
 . ./instance/onMinute.sh
 
 ##-------------##
