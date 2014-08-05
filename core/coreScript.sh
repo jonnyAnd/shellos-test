@@ -8,13 +8,6 @@
 
 startCore(){
 	
-	INITIAL_RUN=$1
-	
-	if ["$INITIAL_RUN" == "true"]; then 
-		onLoad
-	fi
-	
-	
 	ticker
 }
 
@@ -40,13 +33,6 @@ onTick(){
 	else
 		onSecond
 	fi
-}
-
-onLoad(){
-	clear
-	./core/onLoadCore.sh
-
-	exit;	
 }
 
 onDay(){
