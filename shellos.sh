@@ -31,7 +31,8 @@ startShellOs(){
 		updateApp
 		updateInstanceFiles
 		## continue to app
-		./core/coreScript.sh "true"
+		##./core/coreScript.sh "true"
+		onLoad
 	##else 
 		##sh ./core/coreScript.sh
 
@@ -50,6 +51,14 @@ startShellOs(){
 	##fi
 	
 }
+
+onLoad(){
+	clear
+	./core/onLoadCore.sh
+
+	exit;	
+}
+
 
 ## starting
 RECONNECT_COUNT=0;
