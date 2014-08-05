@@ -7,6 +7,14 @@
 
 
 startCore(){
+	
+	INITIAL_RUN=$1
+	
+	if $INITIAL_RUN; then 
+		onLoad
+	fi
+	
+	
 	ticker
 }
 
