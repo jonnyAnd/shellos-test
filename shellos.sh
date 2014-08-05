@@ -31,7 +31,7 @@ startShellOs(){
 		updateApp
 		updateInstanceFiles
 		## continue to app
-		./core/coreScript.sh
+		./core/coreScript.sh true
 	##else 
 		##sh ./core/coreScript.sh
 
