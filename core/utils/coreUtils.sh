@@ -190,3 +190,8 @@ youtubeUtil_returnRawYoutubeSearch(){
 	RESULT="`wget -qO- http://www.youtube.com/results?search_query=$1`"
 	echo $RESULT
 }
+
+clearPrecacheFile(){
+	rm -rf ./precache/
+}
+
