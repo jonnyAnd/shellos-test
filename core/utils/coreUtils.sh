@@ -188,7 +188,7 @@ youtubeUtil_filterForValidResultsAndOutPut(){
 youtubeUtil_returnRawYoutubeSearch(){
 
 	
-	RAND_PAGE=getRandomNumber 1 10
+	##RAND_PAGE=getRandomNumber 1 10
 	
 	
 	##RESULT="`wget -qO- http://www.youtube.com/results?search_query=$1&page=$RAND_PAGE`"
@@ -201,10 +201,10 @@ clearPrecacheFile(){
 	rm -rf ./precache/
 }
 
-getRandomNumber(){
-	MIN=$1;
-	MAX=$2;
-	
-	echo $(( ( RANDOM % $MAX )  + $MIN ));
-}
+##getRandomNumber(){
+##	MIN=$1;
+##	MAX=$2;
+##	
+##	echo $(( ( RANDOM % $MAX )  + $MIN ));
+##}
 
