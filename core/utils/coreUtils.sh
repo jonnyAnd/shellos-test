@@ -186,12 +186,23 @@ youtubeUtil_filterForValidResultsAndOutPut(){
 }
 
 youtubeUtil_returnRawYoutubeSearch(){
-	##echo "Searching youtube for "$1
-	RESULT="`wget -qO- http://www.youtube.com/results?search_query=$1`"
+
+	
+	RAND_PAGE=getRandomNumber 1 10
+	
+	
+	RESULT="`wget -qO- http://www.youtube.com/results?search_query=$1&page=$RAND_PAGE`"
 	echo $RESULT
 }
 
 clearPrecacheFile(){
 	rm -rf ./precache/
+}
+
+getRandomNumber(){
+	MIN=$1;
+	MAX=$2;
+	
+	echo $(( ( RANDOM % $MAX )  + $MIN ));
 }
 
