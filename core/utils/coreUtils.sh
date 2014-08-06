@@ -191,7 +191,9 @@ youtubeUtil_returnRawYoutubeSearch(){
 	RAND_PAGE=getRandomNumber 1 10
 	
 	
-	RESULT="`wget -qO- http://www.youtube.com/results?search_query=$1&page=$RAND_PAGE`"
+	##RESULT="`wget -qO- http://www.youtube.com/results?search_query=$1&page=$RAND_PAGE`"
+	
+	RESULT="`wget -qO- http://www.youtube.com/results?search_query=$1`"
 	echo $RESULT
 }
 
